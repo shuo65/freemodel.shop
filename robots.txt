@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.freemodel.shop/sitemap.xml
+
+Disallow: /temp/
+Disallow: /admin/
