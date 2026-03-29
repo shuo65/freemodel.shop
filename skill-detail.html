@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技能详情 | 免费模型商店</title>
+    <link rel="canonical" href="https://www.freemodel.shop/skill-detail.html">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        :root {
+            --primary-color: #2A5CAA;
+            --accent-color: #FF6B35;
+            --bg-color: #F5F7FA;
+            --text-color: #212529;
+            --card-bg: #ffffff;
+            --link-color: #0d6efd;
+            --border-color: #dee2e6;
+        }
+        [data-bs-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #f5f5f5;
+            --card-bg: #1e1e1e;
+            --link-color: #8ab4f8;
+            --border-color: #333333;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .navbar {
+            background-color: var(--primary-color);
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #1e3d6f);
+            color: white;
+            padding: 3.5rem 1rem;
+        }
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        pre, code {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+        }
+        .rating-star { color: #ffc107; }
+        footer { margin-top: 3rem; padding: 2rem 0; background-color: var(--primary-color); color: white; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span>🛒</span>免费模型商店
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#models">模型列表</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">技能详情</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-3">🛠️ OpenClaw 技能详情</h1>
+            <p class="lead mb-0">探索热门技能的使用方法、配置参数与示例代码</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container py-4">
+        <!-- 技能卡片 -->
+        <div class="skill-card">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <span class="badge bg-primary me-2">热门</span>
+                    <span class="badge bg-success me-2">官方推荐</span>
+                    <h2 class="h4 mb-1">Memory Hot-Swap 插件</h2>
+                    <p class="text-muted mb-0">实现 AI 记忆的热插拔功能，支持动态切换记忆存储后端</p>
+                </div>
+                <div>
+                    <div class="text-end">
+                        <span class="rating-star">★★★★★</span><br>
+                        <small>⭐ 4.8 (1.2k 下载)</small>
+                    </div>
+                </div>
+            </div>
+
+            <h5>📦 安装命令</h5>
+            <pre class="bg-light p-2 rounded mb-3"><code>openclaw plugin install memory-hotswap</code></pre>
+
+            <h5>⚙️ 配置参数</h5>
+            <div class="table-responsive">
+                <table class="table table-sm table-bordered">
+                    <thead>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                            <th>说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>backend</code></td>
+                            <td>string</td>
+                            <td><code>"sqlite"</code></td>
+                            <td>记忆存储后端：sqlite、redis、memory、postgres</td>
+                        </tr>
+                        <tr>
+                            <td><code>max_size</code></td>
+                            <td>number</td>
+                            <td><code>10000</code></td>
+                            <td>最大记忆条数（0=无限制）</td>
+                        </tr>
+                        <tr>
+                            <td><code>ttl</code></td>
+                            <td>number</td>
+                            <td><code>86400</code></td>
+                            <td>记忆存活时间（秒，默认24小时）</td>
+                        </tr>
+                        <tr>
+                            <td><code>flush_interval</code></td>
+                            <td>number</td>
+                            <td><code>60</code></td>
+                            <td>刷盘间隔（秒）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h5>📖 使用示例</h5>
+            <pre class="bg-light p-2 rounded mb-3"><code>// 配置 memory-hotswap 插件
+{
+  "plugins": {
+    "memory-hotswap": {
+      "backend": "sqlite",
+      "max_size": 50000,
+      "ttl": 86400,
+      "flush_interval": 60
+    }
+  }
+}
+
+// 运行时热切换后端
+openclaw plugin memory-hotswap switch --backend redis</code></pre>
+
+            <h5>🌟 功能特点</h5>
+            <ul class="mb-0">
+                <li>✅ <strong>热插拔</strong>: 不用重启服务即可切换记忆存储</li>
+                <li>✅ <strong>多后端支持</strong>: SQLite、Redis、PostgreSQL、内存</li>
+                <li>✅ <strong>自动刷盘</strong>: 定期持久化防止数据丢失</li>
+                <li>✅ <strong>TTL管理</strong>: 自动清理过期记忆</li>
+                <li>✅ <strong>性能监控</strong>: 提供命中率、延迟等指标</li>
+            </ul>
+        </div>
+
+        <!-- 更多技能预告 -->
+        <div class="skill-card">
+            <h3 class="h5 mb-3">🚀 更多热门技能（开发中）</h3>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="p-3 border rounded h-100">
+                        <h6>Puppeteer 自动化脚本</h6>
+                        <p class="small text-muted mb-0">基于Puppeteer的网页自动化，用于抓取和测试</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 border rounded h-100">
+                        <h6>Agent Workflow 设计指南</h6>
+                        <p class="small text-muted mb-0">如何设计复杂的多Agent协作流程</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 border rounded h-100">
+                        <h6>中文使用技巧合集</h6>
+                        <p class="small text-muted mb-0">OpenClaw中文用户社区贡献的技巧</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 border rounded h-100">
+                        <h6>GPT-4o 快速部署</h6>
+                        <p class="small text-muted mb-0">GPT-4o模型的最佳实践配置</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 相关链接 -->
+        <div class="skill-card">
+            <h3 class="h5 mb-3">🔗 相关资源</h3>
+            <ul class="list-unstyled mb-0">
+                <li>📖 <a href="https://docs.openclaw.ai/plugins/memory-hotswap" target="_blank">插件官方文档</a></li>
+                <li>🐙 <a href="https://github.com/OpenClaw/plugins/tree/main/memory-hotswap" target="_blank">GitHub 仓库</a></li>
+                <li>📊 <a href="https://www.freemodel.shop" target="_blank">返回模型商店首页</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">© 2026 免费模型商店. OpenClaw 技能详情页。</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
