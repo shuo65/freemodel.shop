@@ -1,0 +1,140 @@
+{
+  "generated": "2026-03-29",
+  "categories": {
+    "chat": {
+      "name": "对话模型",
+      "icon": "💬",
+      "badge": "bg-primary",
+      "count": 12,
+      "models": [
+        {
+          "id": "claude-3.7-sonnet",
+          "name": "Claude 3.7 Sonnet",
+          "provider": "Anthropic",
+          "description": "Anthropic最新模型，支持长上下文和思维链，综合性能优秀。",
+          "stars": 5200,
+          "version": "1.0",
+          "badge": "推荐",
+          "badgeType": "bg-primary",
+          "deployCommand": "openclaw model add claude-3.7-sonnet",
+          "links": {
+            "github": "https://github.com/anthropics/claude",
+            "docs": "https://docs.openclaw.ai/models/claude"
+          }
+        },
+        {
+          "id": "gpt-4o-mini",
+          "name": "GPT-4o Mini",
+          "provider": "OpenAI",
+          "description": "OpenAI的经济型模型，性价比高，适合日常对话和简单任务。",
+          "stars": 3200,
+          "version": "1.0",
+          "badge": "免费",
+          "badgeType": "bg-secondary",
+          "deployCommand": "openclaw model add gpt-4o-mini",
+          "links": {
+            "github": "https://github.com/openai/gpt-4o"
+          }
+        },
+        {
+          "id": "glm-4-9b",
+          "name": "GLM-4 9B",
+          "provider": "智谱AI",
+          "description": "智谱AI的开源模型，9B参数，支持中文，本地部署友好。",
+          "stars": 2800,
+          "version": "1.0",
+          "badge": "本地",
+          "badgeType": "bg-success",
+          "deployCommand": "openclaw model add glm-4-9b --local",
+          "links": {
+            "github": "https://github.com/THUDM/GLM-4"
+          }
+        }
+      ]
+    },
+    "code": {
+      "name": "代码模型",
+      "icon": "💻",
+      "badge": "bg-success",
+      "count": 8,
+      "models": [
+        {
+          "id": "codellama-70b",
+          "name": "CodeLlama 70B",
+          "provider": "Meta",
+          "description": "Meta的代码专用模型，支持多种编程语言，性能强劲。",
+          "stars": 4500,
+          "version": "1.0",
+          "badge": "推荐",
+          "badgeType": "bg-success",
+          "deployCommand": "openclaw model add codellama-70b",
+          "links": {
+            "github": "https://github.com/facebookresearch/codellama"
+          }
+        },
+        {
+          "id": "starcoder2-15b",
+          "name": "StarCoder2 15B",
+          "provider": "BigCode",
+          "description": "轻量级代码模型，速度快，适合实时补全和简单生成。",
+          "stars": 2100,
+          "version": "1.0",
+          "badge": "轻量",
+          "badgeType": "bg-secondary",
+          "deployCommand": "openclaw model add starcoder2-15b",
+          "links": {
+            "github": "https://github.com/bigcode/starcoder2"
+          }
+        }
+      ]
+    },
+    "image": {
+      "name": "图像模型",
+      "icon": "🎨",
+      "badge": "bg-warning text-dark",
+      "count": 6,
+      "models": [
+        {
+          "id": "sdxl",
+          "name": "Stable Diffusion XL",
+          "provider": "Stability AI",
+          "description": "最流行的开源图像生成模型，支持提示词和ControlNet。",
+          "stars": 12000,
+          "version": "1.0",
+          "badge": "热门",
+          "badgeType": "bg-warning text-dark",
+          "deployCommand": "openclaw model add sdxl",
+          "links": {
+            "github": "https://github.com/Stability-AI/generative-models"
+          }
+        }
+      ]
+    },
+    "multimodal": {
+      "name": "多模态模型",
+      "icon": "🌟",
+      "badge": "bg-info",
+      "count": 4,
+      "models": [
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "provider": "OpenAI",
+          "description": "原生多模态模型，支持文本、图像、音频输入，响应速度快。",
+          "stars": 8900,
+          "version": "1.0",
+          "badge": "推荐",
+          "badgeType": "bg-info",
+          "deployCommand": "openclaw model add gpt-4o",
+          "links": {
+            "github": "https://github.com/openai/gpt-4o"
+          }
+        }
+      ]
+    }
+  },
+  "submission": {
+    "issueUrl": "https://github.com/OpenClaw-zh/freemodel.shop/issues",
+    "prInstructions": "提交PR前请确保模型信息格式正确，包含：名称、描述、部署命令、官方链接、stars数。"
+  }
+}
