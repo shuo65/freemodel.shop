@@ -130,14 +130,6 @@
             font-size: 0.9rem;
             opacity: 0.95;
         }
-            .hero .btn {
-            padding: 0.4rem 1rem;
-            font-size: 0.9rem;
-        }
-        .hero .btn {
-            font-size: 1rem;
-            padding: 0.6rem 1.5rem;
-        }
         .section-title {
             border-left: 4px solid var(--accent-color);
             padding-left: 1rem;
@@ -477,26 +469,6 @@
                 <strong>🎯 域名出售中：</strong>
                 <a href="mailto:shuo65@qq.com" class="text-white text-decoration-underline fw-bold">shuo65@qq.com</a>
             </p>
-            <a href="#models" class="btn btn-light btn-lg px-4">浏览模型</a>
-        </div>
-    </section>
-
-    <!-- History Section -->
-    <section id="history">
-        <h2 class="section-title">📜 免费模型商店发展史</h2>
-        <p class="text-muted mb-3">记录模型商店的成长历程和重要里程碑</p>
-        <div id="auto-timeline"></div>
-        <div class="coming-soon">
-            <strong>🚧 正在开发：</strong> Git提交记录自动生成功能（即将上线）
-        </div>
-    </section>
-
-    <!-- Versions Section -->
-    <section id="versions" class="mt-5">
-        <h2 class="section-title">📦 OpenClaw版本展示</h2>
-        <p class="text-muted mb-3">了解OpenClaw各个版本的特点和更新内容</p>
-        <div class="alert alert-info">
-            <strong>📖 详细版本信息：</strong> 请访问 <a href="https://www.dragonclaws.cn/version-detail.html" target="_blank" class="alert-link">龙爪中国版本详情页</a> 查看完整版本历史和发展历程。
         </div>
     </section>
 
@@ -511,43 +483,175 @@
         <section id="models">
             <h2 class="section-title">📂 模型分类</h2>
             <p class="text-muted mb-3">选择模型类别开始浏览</p>
-            <div class="row g-3 text-center" id="category-cards">
-                <!-- 动态生成分类卡片 -->
+            <div class="row g-2 gy-2">
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2 text-center">
+                        <h6 class="mb-1">💬 对话模型</h6>
+                        <p class="text-muted mb-1 very-small">Claude、GPT、Kimi等</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2 text-center">
+                        <h6 class="mb-1">🔧 插件</h6>
+                        <p class="text-muted mb-1 very-small">Memory、Web Search</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2 text-center">
+                        <h6 class="mb-1">🤖 本地模型</h6>
+                        <p class="text-muted mb-1 very-small">Qwen、GLM、Llama</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2 text-center">
+                        <h6 class="mb-1">🛠️ 工具</h6>
+                        <p class="text-muted mb-1 very-small">自动化、代码执行</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- 模型列表 -->
         <section id="model-list" class="mt-5">
             <h2 class="section-title">📦 模型列表</h2>
-            <p class="text-muted mb-3">精选免费OpenClaw模型，一键部署命令已提供</p>
-
-            <div id="dynamic-models">
-                <!-- 动态生成模型列表 -->
-                <div class="text-center py-4">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">加载中...</span>
+            <p class="text-muted mb-3">精选 OpenClaw 模型（标注重免费/付费），一键部署命令已提供</p>
+            <div class="row g-2 gy-2">
+                <!-- Claude 3.7 Sonnet -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-primary mb-1 small">模型</span>
+                        <h6 class="mb-1">Claude-3.7-Sonnet <span class="badge bg-warning text-dark ms-1" style="font-size:0.6rem;">付费</span></h6>
+                        <p class="text-muted mb-1 very-small">Anthropic 旗舰模型，支持长上下文和思维链</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>openclaw model add claude-3.7-sonnet</code></pre>
+                        <a href="https://github.com/OpenClaw/models" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
                     </div>
-                    <p class="mt-2">正在加载模型数据...</p>
+                </div>
+                <!-- GPT-4o -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-primary mb-1 small">模型</span>
+                        <h6 class="mb-1">GPT-4o <span class="badge bg-warning text-dark ms-1" style="font-size:0.6rem;">付费</span></h6>
+                        <p class="text-muted mb-1 very-small">OpenAI 多模态旗舰模型</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>openclaw model add gpt-4o</code></pre>
+                        <a href="https://platform.openai.com/docs/models/gpt-4o" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- Qwen3-70B -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-success mb-1 small">模型</span>
+                        <h6 class="mb-1">Qwen3-70B <span class="badge bg-success ms-1" style="font-size:0.6rem;">免费</span></h6>
+                        <p class="text-muted mb-1 very-small">阿里通义千问 70B 开源可商用</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>openclaw model add qwen3-70b</code></pre>
+                        <a href="https://modelscope.cn/models/qwen/Qwen3-70B" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- GLM-4.7-Flash -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-success mb-1 small">模型</span>
+                        <h6 class="mb-1">GLM-4.7-Flash <span class="badge bg-success ms-1" style="font-size:0.6rem;">免费</span></h6>
+                        <p class="text-muted mb-1 very-small">智谱AI，快速响应，适合对话</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>openclaw model add glm-4.7-flash</code></pre>
+                        <a href="https://bigmodel.cn" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- Step-3.5-Flash -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-success mb-1 small">模型</span>
+                        <h6 class="mb-1">Step-3.5-Flash <span class="badge bg-success ms-1" style="font-size:0.6rem;">免费</span></h6>
+                        <p class="text-muted mb-1 very-small">阶跃星辰，多模态推理能力强</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>openclaw model add step-3.5-flash</code></pre>
+                        <a href="https://stepfun.com" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- DeepSeek-V3 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-info mb-1 small">模型</span>
+                        <h6 class="mb-1">DeepSeek-V3 <span class="badge bg-success ms-1" style="font-size:0.6rem;">免费</span></h6>
+                        <p class="text-muted mb-1 very-small">深度求索，强代码能力</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>openclaw model add deepseek-v3</code></pre>
+                        <a href="https://chat.deepseek.com" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- Kimi -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-info mb-1 small">模型</span>
+                        <h6 class="mb-1">Kimi <span class="badge bg-warning text-dark ms-1" style="font-size:0.6rem;">免费额度</span></h6>
+                        <p class="text-muted mb-1 very-small">Moonshot，200万tokens超长上下文</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>openclaw model add kimi</code></pre>
+                        <a href="https://kimi.moonshot.cn" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- MiniMax -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-warning text-dark mb-1 small">模型</span>
+                        <h6 class="mb-1">MiniMax <span class="badge bg-warning text-dark ms-1" style="font-size:0.6rem;">免费额度</span></h6>
+                        <p class="text-muted mb-1 very-small">海螺AI，10秒极速部署</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>openclaw model add minimax</code></pre>
+                        <a href="https://minimax.chat" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- Ollama 本地模型 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-secondary mb-1 small">本地</span>
+                        <h6 class="mb-1">Ollama 本地模型 <span class="badge bg-success ms-1" style="font-size:0.6rem;">免费</span></h6>
+                        <p class="text-muted mb-1 very-small">Llama3、Mistral 等开源模型</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>ollama pull llama3</code></pre>
+                        <a href="https://ollama.ai" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- LM Studio -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-secondary mb-1 small">本地</span>
+                        <h6 class="mb-1">LM Studio <span class="badge bg-success ms-1" style="font-size:0.6rem;">免费</span></h6>
+                        <p class="text-muted mb-1 very-small">本地模型管理，支持 GGUF 格式</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>openclaw model add local-gguf</code></pre>
+                        <a href="https://lmstudio.ai" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- Memory Hot-Swap -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-success mb-1 small">插件</span>
+                        <h6 class="mb-1">Memory Hot-Swap <span class="badge bg-success ms-1" style="font-size:0.6rem;">免费</span></h6>
+                        <p class="text-muted mb-1 very-small">AI记忆热插拔，动态切换后端</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>openclaw plugin install memory-hotswap</code></pre>
+                        <a href="https://github.com/OpenClaw/plugins" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- Web Search -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-info mb-1 small">插件</span>
+                        <h6 class="mb-1">Web Search <span class="badge bg-success ms-1" style="font-size:0.6rem;">免费</span></h6>
+                        <p class="text-muted mb-1 very-small">联网搜索插件，支持17个引擎</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>openclaw plugin install web-search</code></pre>
+                        <a href="https://github.com/OpenClaw/plugins/tree/main/web-search" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- Code Interpreter -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-primary mb-1 small">工具</span>
+                        <h6 class="mb-1">Code Interpreter <span class="badge bg-success ms-1" style="font-size:0.6rem;">免费</span></h6>
+                        <p class="text-muted mb-1 very-small">代码执行与数据分析</p>
+                        <pre class="bg-light p-1 rounded mb-1" style="font-size: 0.7rem;"><code>openclaw code execute "print(1+1)"</code></pre>
+                        <a href="https://github.com/OpenClaw/tools" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
                 </div>
             </div>
-
-            <div class="mt-5 coming-soon" id="submission-info" style="display: none;">
-                <h5>🤝 如何提交新模型？</h5>
-                <p>通过 <a id="issue-url" href="#" target="_blank" class="text-decoration-none">GitHub Issues</a> 提交您发现的优质免费模型：</p>
-                <ol>
-                    <li>Fork <a id="repo-url" href="#" target="_blank">本项目</a></li>
-                    <li>在 <code>data/models.json</code> 中添加模型信息</li>
-                    <li>提交 Pull Request</li>
-                    <li>管理员审核后上线</li>
-                </ol>
-                <p class="mb-0"><small id="pr-instructions">📝 模型信息格式参考现有条目，需包含：名称、描述、部署命令、官方链接、stars数</small></p>
-            </div>
         </section>
-
-        </main>
+    </main>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-dark text-white py-4 mt-5">
+    <footer class="bg-dark text-white py-4 mt-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 mb-3 mb-md-0">
